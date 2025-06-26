@@ -83,6 +83,38 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+@keyframes pulse-slow {
+    0%, 100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(1.05);
+    }
+}
+
+@keyframes rotate-slow {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes gradient-shift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
 /* Navigation Link Hover Effect */
 .nav-link::after {
     content: '';
@@ -188,6 +220,20 @@ html {
 .filter-btn.active {
     background: linear-gradient(135deg, #2563eb, #7c3aed);
     color: white;
+}
+
+/* Enhanced Animation Classes */
+.animate-pulse-slow {
+    animation: pulse-slow 4s ease-in-out infinite;
+}
+
+.animate-rotate-slow {
+    animation: rotate-slow 20s linear infinite;
+}
+
+.animate-gradient-shift {
+    animation: gradient-shift 6s ease infinite;
+    background-size: 200% 200%;
 }
 
 /* Responsive Adjustments */
