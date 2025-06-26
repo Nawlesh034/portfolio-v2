@@ -1,0 +1,1179 @@
+/* Custom CSS for Portfolio */
+
+/* Font Families */
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+}
+
+/* Custom Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideLeft {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideRight {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+    }
+    to {
+        box-shadow: 0 0 30px rgba(147, 51, 234, 0.5);
+    }
+}
+
+/* Navigation Link Hover Effect */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 50%;
+    background: linear-gradient(90deg, #2563eb, #7c3aed);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Scroll Progress Bar */
+#scroll-progress {
+    width: 0%;
+}
+
+/* Loading Screen */
+#loading-screen {
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+#loading-screen.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #2563eb, #7c3aed);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #1d4ed8, #6d28d9);
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Mobile Menu Animation */
+#mobile-menu.show {
+    transform: translateY(0);
+}
+
+/* Back to Top Button */
+#back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #2563eb, #7c3aed);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+#back-to-top:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+}
+
+/* Typing Animation */
+.typing-cursor {
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+/* Portfolio Filter Buttons */
+.filter-btn.active {
+    background: linear-gradient(135deg, #2563eb, #7c3aed);
+    color: white;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .animate-fade-in,
+    .animate-slide-up,
+    .animate-slide-down,
+    .animate-slide-left,
+    .animate-slide-right {
+        animation-duration: 0.6s;
+    }
+}
+
+/* Intersection Observer Animations */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fade-in-left {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: all 0.8s ease;
+}
+
+.fade-in-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.fade-in-right {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: all 0.8s ease;
+}
+
+.fade-in-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Hover Effects */
+.hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Gradient Text */
+.gradient-text {
+    background: linear-gradient(135deg, #2563eb, #7c3aed, #ec4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Custom Button Styles */
+.btn-primary {
+    background: linear-gradient(135deg, #2563eb, #7c3aed);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+}
+
+.btn-secondary {
+    border: 2px solid #e5e7eb;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    border-color: #2563eb;
+    color: #2563eb;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.1);
+}
+
+/* Skill Card Animations */
+.skill-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.5s;
+}
+
+.skill-card:hover::before {
+    left: 100%;
+}
+
+.skill-card:active {
+    transform: scale(0.98);
+}
+
+/* Modal Animations */
+#skill-modal .bg-white {
+    transform: scale(0.95);
+    transition: transform 0.3s ease;
+}
+
+#skill-modal:not(.invisible) .bg-white {
+    transform: scale(1);
+}
+
+/* Progress Bar Animation */
+#modal-progress {
+    width: 0%;
+    transition: width 1s ease-out;
+}
+
+/* Pulse Animation for Clicked Skills */
+@keyframes skillPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 20px rgba(59, 130, 246, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+    }
+}
+
+.skill-card.animate-pulse {
+    animation: skillPulse 1s ease-out;
+}
+
+/* Learning Badge Animation */
+@keyframes bounce {
+    0%, 20%, 53%, 80%, 100% {
+        transform: translate3d(0, 0, 0);
+    }
+    40%, 43% {
+        transform: translate3d(0, -8px, 0);
+    }
+    70% {
+        transform: translate3d(0, -4px, 0);
+    }
+    90% {
+        transform: translate3d(0, -2px, 0);
+    }
+}
+
+.skill-card[data-learning="true"] .absolute {
+    animation: bounce 2s infinite;
+}
+
+/* Responsive Skill Cards */
+@media (max-width: 768px) {
+    .skill-card {
+        padding: 1.5rem;
+    }
+
+    .skill-card img {
+        width: 4rem;
+        height: 4rem;
+    }
+
+    .skill-card span {
+        font-size: 1rem;
+    }
+}
+
+/* Skill Category Stagger Animation */
+.skills-category {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.skills-category.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Portfolio Section Styles */
+.portfolio-filter {
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-filter::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.portfolio-filter:hover::before {
+    left: 100%;
+}
+
+.portfolio-item {
+    transition: all 0.5s ease;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-10px) scale(1.02);
+}
+
+.portfolio-item img {
+    transition: transform 0.7s ease;
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Portfolio Modal Styles */
+#project-modal {
+    backdrop-filter: blur(10px);
+}
+
+#project-modal .bg-gradient-to-br {
+    max-width: 90vw;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+/* Custom Scrollbar for Modal */
+#project-modal .bg-gradient-to-br::-webkit-scrollbar {
+    width: 6px;
+}
+
+#project-modal .bg-gradient-to-br::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+}
+
+#project-modal .bg-gradient-to-br::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+}
+
+#project-modal .bg-gradient-to-br::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/* Portfolio Grid Animation */
+.portfolio-item {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.portfolio-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Portfolio Category Tags */
+.portfolio-item .absolute span {
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover Effects for Portfolio Cards */
+.portfolio-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(59, 130, 246, 0.1), rgba(147, 51, 234, 0.1));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 1rem;
+    z-index: 1;
+}
+
+.portfolio-item:hover::before {
+    opacity: 1;
+}
+
+/* Portfolio Button Animations */
+.portfolio-item button,
+.portfolio-item a {
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-item button::before,
+.portfolio-item a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.portfolio-item button:hover::before,
+.portfolio-item a:hover::before {
+    left: 100%;
+}
+
+/* Responsive Portfolio Grid */
+@media (max-width: 768px) {
+    .portfolio-item {
+        margin-bottom: 2rem;
+    }
+
+    #project-modal .grid {
+        grid-template-columns: 1fr;
+    }
+
+    #project-modal .bg-gradient-to-br {
+        margin: 1rem;
+        max-height: 95vh;
+    }
+}
+
+/* Portfolio Loading Animation */
+@keyframes portfolioFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.portfolio-item.animate-in {
+    animation: portfolioFadeIn 0.6s ease forwards;
+}
+
+/* Contact Section Styles */
+.form-group.focused label {
+    color: #2563eb;
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.1);
+}
+
+/* Contact Form Animations */
+.form-group {
+    position: relative;
+}
+
+.form-group input,
+.form-group textarea {
+    transition: all 0.3s ease;
+}
+
+.form-group input:hover,
+.form-group textarea:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Contact Info Cards */
+.contact-info-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-info-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.5s;
+}
+
+.contact-info-card:hover::before {
+    left: 100%;
+}
+
+/* Footer Styles */
+footer a {
+    transition: all 0.3s ease;
+}
+
+footer a:hover {
+    transform: translateX(4px);
+}
+
+/* Social Icons Hover Effects */
+.social-icon {
+    position: relative;
+    overflow: hidden;
+}
+
+.social-icon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.2));
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.social-icon:hover::before {
+    transform: translateX(0);
+}
+
+/* Form Success/Error Messages */
+#form-message {
+    transition: all 0.3s ease;
+    border-radius: 0.5rem;
+}
+
+#form-message.show {
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Footer Link Hover Animation */
+footer ul li a {
+    position: relative;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+footer ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+    transition: width 0.3s ease;
+}
+
+footer ul li a:hover::after {
+    width: 100%;
+}
+
+/* Responsive Contact Section */
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .contact-info-card {
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+}
+
+/* Contact Form Button Animation */
+#contact-form button[type="submit"] {
+    position: relative;
+    overflow: hidden;
+}
+
+#contact-form button[type="submit"]::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+#contact-form button[type="submit"]:hover::before {
+    left: 100%;
+}
+
+/* Footer Back to Top Button */
+.back-to-top-footer {
+    position: relative;
+    overflow: hidden;
+}
+
+.back-to-top-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.back-to-top-footer:hover::before {
+    left: 100%;
+}
+
+/* ===== RESPONSIVE DESIGN FIXES ===== */
+
+/* Mobile Menu Responsive Styles */
+#mobile-menu {
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+#mobile-menu.opacity-100 {
+    opacity: 1;
+    visibility: visible;
+}
+
+#mobile-menu.opacity-0 {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Navbar Responsive Improvements */
+@media (max-width: 1024px) {
+    header .w-full {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    header .py-3 {
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 0;
+    }
+
+    header .flex {
+        padding: 0.5rem 1rem;
+    }
+
+    /* Mobile menu improvements */
+    #mobile-menu {
+        max-height: calc(100vh - 70px);
+        overflow-y: auto;
+    }
+
+    #mobile-menu a {
+        font-size: 1rem;
+        padding: 0.75rem 1rem;
+    }
+}
+
+/* Hero Section Responsive Fixes */
+@media (max-width: 1024px) {
+    #home {
+        padding-top: 5rem;
+        min-height: 90vh;
+    }
+
+    #home .grid {
+        gap: 2rem;
+    }
+
+    #home h1 {
+        font-size: 3rem;
+        line-height: 1.1;
+    }
+
+    #home .text-xl {
+        font-size: 1.125rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #home {
+        padding-top: 4rem;
+        min-height: 85vh;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    #home .space-y-6 {
+        gap: 1.5rem;
+    }
+
+    #home h1 {
+        font-size: 2.5rem;
+        line-height: 1.2;
+    }
+
+    #home .text-lg {
+        font-size: 1rem;
+    }
+
+    #home .px-6 {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    #home .py-3 {
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+    }
+
+    /* Hero image responsive */
+    #home .w-56 {
+        width: 12rem;
+        height: 12rem;
+    }
+
+    #home .w-72 {
+        width: 16rem;
+        height: 16rem;
+    }
+
+    /* Adjust floating elements for mobile */
+    #home .absolute.top-6 {
+        top: 1rem;
+        right: -1rem;
+    }
+
+    #home .absolute.bottom-6 {
+        bottom: 1rem;
+        left: -1rem;
+    }
+}
+
+@media (max-width: 640px) {
+    #home {
+        padding-top: 3.5rem;
+        min-height: 80vh;
+    }
+
+    #home h1 {
+        font-size: 2rem;
+        line-height: 1.3;
+    }
+
+    #home .text-base {
+        font-size: 0.875rem;
+    }
+
+    #home .space-y-3 {
+        gap: 0.75rem;
+    }
+
+    #home .flex-col {
+        gap: 0.75rem;
+    }
+
+    #home .px-6 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    #home .py-3 {
+        padding-top: 0.625rem;
+        padding-bottom: 0.625rem;
+    }
+
+    /* Smaller hero image for very small screens */
+    #home .w-56 {
+        width: 10rem !important;
+        height: 10rem !important;
+    }
+
+    /* Hide floating elements on very small screens */
+    #home .absolute.top-6,
+    #home .absolute.bottom-6 {
+        display: none;
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+    #home .w-56 {
+        width: 8rem !important;
+        height: 8rem !important;
+    }
+
+    #home h1 {
+        font-size: 1.75rem;
+    }
+
+    #home .grid {
+        gap: 1.5rem;
+    }
+}
+
+/* About Section Responsive */
+@media (max-width: 768px) {
+    #about .grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    #about .text-4xl {
+        font-size: 2rem;
+    }
+
+    #about .text-xl {
+        font-size: 1.125rem;
+    }
+}
+
+/* Skills Section Responsive */
+@media (max-width: 768px) {
+    #skills .flex-wrap {
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    #skills .skill-card {
+        min-width: 140px;
+        padding: 1.5rem;
+    }
+
+    #skills .w-20 {
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+
+    #skills .text-lg {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 640px) {
+    #skills .skill-card {
+        min-width: 120px;
+        padding: 1rem;
+    }
+
+    #skills .w-20 {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    #skills .text-lg {
+        font-size: 0.875rem;
+    }
+
+    #skills .mb-6 {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Portfolio Section Responsive */
+@media (max-width: 1024px) {
+    #portfolio .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #portfolio .grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    #portfolio .portfolio-filter {
+        font-size: 0.875rem;
+        padding: 0.5rem 1rem;
+    }
+
+    #portfolio .flex-wrap {
+        gap: 0.5rem;
+    }
+}
+
+/* Contact Section Responsive */
+@media (max-width: 1024px) {
+    #contact .grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #contact .grid {
+        gap: 1.5rem;
+    }
+
+    #contact .contact-info-card {
+        padding: 1rem;
+    }
+
+    #contact .w-16 {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    #contact .text-lg {
+        font-size: 1rem;
+    }
+}
+
+/* Footer Responsive */
+@media (max-width: 1024px) {
+    footer .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    footer .grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        text-align: center;
+    }
+
+    footer .flex {
+        justify-content: center;
+    }
+
+    footer .space-x-4 {
+        gap: 1rem;
+    }
+}
+
+/* General Responsive Typography */
+@media (max-width: 768px) {
+    .text-4xl {
+        font-size: 2rem !important;
+    }
+
+    .text-3xl {
+        font-size: 1.75rem !important;
+    }
+
+    .text-2xl {
+        font-size: 1.5rem !important;
+    }
+
+    .text-xl {
+        font-size: 1.125rem !important;
+    }
+}
+
+@media (max-width: 640px) {
+    .text-4xl {
+        font-size: 1.75rem !important;
+    }
+
+    .text-3xl {
+        font-size: 1.5rem !important;
+    }
+
+    .text-2xl {
+        font-size: 1.25rem !important;
+    }
+
+    .text-xl {
+        font-size: 1rem !important;
+    }
+}
+
+/* Spacing Responsive Adjustments */
+@media (max-width: 768px) {
+    .py-20 {
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+    }
+
+    .py-16 {
+        padding-top: 2.5rem !important;
+        padding-bottom: 2.5rem !important;
+    }
+
+    .mb-16 {
+        margin-bottom: 2rem !important;
+    }
+
+    .mb-12 {
+        margin-bottom: 1.5rem !important;
+    }
+
+    .space-y-8 > * + * {
+        margin-top: 1.5rem !important;
+    }
+
+    .space-y-6 > * + * {
+        margin-top: 1rem !important;
+    }
+}
+
+/* Container Responsive Padding */
+@media (max-width: 1024px) {
+    .px-6 {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .px-6 {
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
+    }
+
+    .px-8 {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+}
+
+/* Button Responsive Styles */
+@media (max-width: 768px) {
+    .px-8 {
+        padding-left: 1.5rem !important;
+        padding-right: 1.5rem !important;
+    }
+
+    .py-4 {
+        padding-top: 0.75rem !important;
+        padding-bottom: 0.75rem !important;
+    }
+
+    .py-3 {
+        padding-top: 0.625rem !important;
+        padding-bottom: 0.625rem !important;
+    }
+}
+
+/* Modal Responsive */
+@media (max-width: 768px) {
+    #project-modal .bg-gradient-to-br {
+        margin: 0.5rem;
+        max-height: 95vh;
+        padding: 1.5rem;
+    }
+
+    #skill-modal .bg-white {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+}
+
+/* Ensure no horizontal scroll */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.container {
+    max-width: 100%;
+    overflow-x: hidden;
+}
